@@ -1,5 +1,8 @@
 # Eduardo Batista Nogueira — Landing Page
 
+## Link
+https://ebatistanog.github.io/
+
 ![image](https://github.com/user-attachments/assets/557b030e-20f0-451d-ac08-7092e294feef)
 
 
@@ -16,4 +19,4 @@
 - Botões com cores personalizadas para LinkedIn (#0077B5) e GitHub (#333)
 - Botão funcional para imprimir/baixar como PDF
 
-Feito com 💜
+## Feito com 💜
