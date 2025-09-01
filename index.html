@@ -2,159 +2,196 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Eduardo Batista Nogueira</title>
-    <style>
-        :root {
-            --main-bg-gradient: linear-gradient(to bottom right, #6a5acd, #698cff, #ffb6c1, #ffff99);
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eduardo Batista Nogueira</title>
+  <style>
+    /* Fundo animado */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #333;
+      padding: 20px;
+      background: linear-gradient(-45deg, #6a5acd, #698cff, #ffb6c1, #ffff99);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: var(--main-bg-gradient);
-            color: #333;
-            padding: 20px;
-        }
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
 
-        .container {
-            max-width: 900px;
-            margin: auto;
-            display: grid;
-            gap: 20px;
-        }
+      50% {
+        background-position: 100% 50%;
+      }
 
-        .card {
-            background: #fff;
-            border-radius: 16px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 24px;
-        }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
 
-        h1,
-        h2 {
-            margin-top: 0;
-        }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      display: grid;
+      gap: 20px;
+    }
 
-        .contact-info p,
-        .contact-info a,
-        .tech-list li,
-        .lang-list li {
-            margin: 6px 0;
-        }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 24px;
+    }
 
-        .btns a,
-        .btns button {
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 8px;
-            margin-right: 10px;
-            display: inline-block;
-            border: none;
-            cursor: pointer;
-            font-weight: bold;
-        }
+    h1,
+    h2 {
+      margin-top: 0;
+    }
 
-        .btns a.linkedin {
-            background-color: transparent;
-            color: #333;
-            border: 1px solid #333;
-        }
+    .contact-info p,
+    .contact-info a,
+    .tech-list li,
+    .lang-list li {
+      margin: 6px 0;
+    }
 
-        .btns a.linkedin:hover {
-            background-color: #333;
-            color: white;
-        }
+    .btns a,
+    .btns button {
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      margin-right: 10px;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
 
-        .btns a.github {
-            background-color: transparent;
-            color: #333;
-            border: 1px solid #333;
-        }
+    .btns a.linkedin,
+    .btns a.github,
+    .btns button.download,
+    .btns button.lang-toggle {
+      background-color: transparent;
+      color: #333;
+      border: 1px solid #333;
+    }
 
-        .btns a.github:hover {
-            background-color: #333;
-            color: white;
-        }
-
-        .btns button.download {
-            background-color: transparent;
-            color: #000;
-            border: 1px solid #000;
-        }
-
-        .btns button.download:hover {
-            background-color: #000;
-            color: white;
-        }
-    </style>
+    .btns a:hover,
+    .btns button:hover {
+      background-color: #333;
+      color: white;
+    }
+  </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="card">
-            <h1>Eduardo Batista Nogueira</h1>
-            <div class="contact-info">
-                <p>📞 +55 (35) 99718-1888</p>
-                <p>📧 pro.eduardobatistanogueira@gmail.com</p>
-                <div class="btns">
-                    <a class="linkedin" href="https://linkedin.com/in/eduardo-batista-nogueira-89046716a"
-                        target="_blank">LinkedIn</a>
-                    <a class="github" href="https://github.com/EBatistaNog" target="_blank">GitHub</a>
-                    <button class="download" onclick="window.print()">Download PDF</button>
-                </div>
-            </div>
+  <div class="container">
+    <div class="card">
+      <h1 id="name">Eduardo Batista Nogueira</h1>
+      <div class="contact-info">
+        <p>📞 +55 (35) 99718-1888</p>
+        <p>📧 pro.eduardobatistanogueira@gmail.com</p>
+        <div class="btns">
+          <a class="linkedin" href="https://linkedin.com/in/eduardo-batista-nogueira-89046716a" target="_blank">LinkedIn</a>
+          <a class="github" href="https://github.com/EBatistaNog" target="_blank">GitHub</a>
+          <button class="download" onclick="window.print()">Download PDF</button>
+          <button class="lang-toggle" onclick="toggleLang()">PT/EN</button>
         </div>
-
-        <div class="card">
-            <h2>Professional Summary</h2>
-            <p>
-                Experienced QA Engineer with over 8 years in the technology field, combining deep knowledge across
-                telecommunications, software development, test automation, continuous integration, high-quality
-                delivery, and cloud solutions. Known for a strong commitment to continuous learning, versatility, and
-                excellent organizational skills. Feel free to reach out if you have any questions.
-            </p>
-        </div>
-
-        <div class="card">
-            <h2>Professional Experience</h2>
-            <ul>
-                <li><strong>QA Engineer</strong> – WatchGuard Technologies (Feb 2021 – Sep 2024)</li>
-                <li><strong>Support Analyst</strong> – Infolago Networks Company (Aug 2020 – Feb 2021)</li>
-                <li><strong>RF Engineering Intern</strong> – Inatel (May 2017 – Dec 2017)</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h2>Education</h2>
-            <p>Bachelor’s Degree in Telecommunications Engineering – Inatel (2012 – 2018)</p>
-        </div>
-
-        <div class="card">
-            <h2>Technical Skills</h2>
-            <ul class="tech-list">
-                <li>TypeScript, JavaScript, Python, Java</li>
-                <li>Cypress, Playwright, Selenium, Appium</li>
-                <li>Postman, REST Assured</li>
-                <li>JMeter, K6</li>
-                <li>Jenkins</li>
-                <li>CloudWatch, Graylog, New Relic</li>
-                <li>AWS</li>
-                <li>Scrum, JIRA, Confluence</li>
-                <li>SQL, MongoDB</li>
-                <li><a href="https://github.com/EBatistaNog" target="_blank">Portfolio GitHub</a></li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h2>Languages</h2>
-            <ul class="lang-list">
-                <li>Portuguese – Native</li>
-                <li>English – Intermediate</li>
-            </ul>
-        </div>
+      </div>
     </div>
+
+    <div class="card">
+      <h2 id="summary-title">Professional Summary</h2>
+      <p id="summary-text">
+        Experienced QA Engineer with over 8 years in the technology field, combining deep knowledge across
+        telecommunications, software development, test automation, continuous integration, high-quality
+        delivery, and cloud solutions.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2 id="experience-title">Professional Experience</h2>
+      <ul id="experience-list">
+        <li><strong>QA Engineer</strong> – WatchGuard Technologies (Feb 2021 – Sep 2024)</li>
+        <li><strong>Support Analyst</strong> – Infolago Networks Company (Aug 2020 – Feb 2021)</li>
+        <li><strong>RF Engineering Intern</strong> – Inatel (May 2017 – Dec 2017)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2 id="education-title">Education</h2>
+      <p id="education-text">Bachelor’s Degree in Telecommunications Engineering – Inatel (2012 – 2018)</p>
+    </div>
+
+    <div class="card">
+      <h2 id="skills-title">Technical Skills</h2>
+      <ul class="tech-list" id="skills-list">
+        <li>TypeScript, JavaScript, Python, Java</li>
+        <li>Cypress, Playwright, Selenium, Appium</li>
+        <li>Postman, REST Assured</li>
+        <li>JMeter, K6</li>
+        <li>Jenkins</li>
+        <li>CloudWatch, Graylog, New Relic</li>
+        <li>AWS</li>
+        <li>Scrum, JIRA, Confluence</li>
+        <li>SQL, MongoDB</li>
+        <li><a href="https://github.com/EBatistaNog" target="_blank">Portfolio GitHub</a></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2 id="languages-title">Languages</h2>
+      <ul class="lang-list" id="languages-list">
+        <li>Portuguese – Native</li>
+        <li>English – Intermediate</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    let isEnglish = true;
+
+    function toggleLang() {
+      isEnglish = !isEnglish;
+      if (!isEnglish) {
+        // Versão em Português
+        document.getElementById("summary-title").innerText = "Resumo Profissional";
+        document.getElementById("summary-text").innerText =
+          "Engenheiro de QA com mais de 8 anos de experiência em tecnologia, unindo conhecimentos em telecomunicações, desenvolvimento de software, automação de testes, integração contínua, entrega de qualidade e soluções em nuvem.";
+        document.getElementById("experience-title").innerText = "Experiência Profissional";
+        document.getElementById("experience-list").innerHTML = `
+          <li><strong>Engenheiro de QA</strong> – WatchGuard Technologies (Fev 2021 – Set 2024)</li>
+          <li><strong>Analista de Suporte</strong> – Infolago Networks Company (Ago 2020 – Fev 2021)</li>
+          <li><strong>Estagiário em Engenharia de RF</strong> – Inatel (Mai 2017 – Dez 2017)</li>`;
+        document.getElementById("education-title").innerText = "Formação Acadêmica";
+        document.getElementById("education-text").innerText = "Bacharelado em Engenharia de Telecomunicações – Inatel (2012 – 2018)";
+        document.getElementById("skills-title").innerText = "Competências Técnicas";
+        document.getElementById("languages-title").innerText = "Idiomas";
+        document.getElementById("languages-list").innerHTML = `
+          <li>Português – Nativo</li>
+          <li>Inglês – Intermediário</li>`;
+      } else {
+        // Versão em Inglês
+        document.getElementById("summary-title").innerText = "Professional Summary";
+        document.getElementById("summary-text").innerText =
+          "Experienced QA Engineer with over 8 years in the technology field, combining deep knowledge across telecommunications, software development, test automation, continuous integration, high-quality delivery, and cloud solutions.";
+        document.getElementById("experience-title").innerText = "Professional Experience";
+        document.getElementById("experience-list").innerHTML = `
+          <li><strong>QA Engineer</strong> – WatchGuard Technologies (Feb 2021 – Sep 2024)</li>
+          <li><strong>Support Analyst</strong> – Infolago Networks Company (Aug 2020 – Feb 2021)</li>
+          <li><strong>RF Engineering Intern</strong> – Inatel (May 2017 – Dec 2017)</li>`;
+        document.getElementById("education-title").innerText = "Education";
+        document.getElementById("education-text").innerText = "Bachelor’s Degree in Telecommunications Engineering – Inatel (2012 – 2018)";
+        document.getElementById("skills-title").innerText = "Technical Skills";
+        document.getElementById("languages-title").innerText = "Languages";
+        document.getElementById("languages-list").innerHTML = `
+          <li>Portuguese – Native</li>
+          <li>English – Intermediate</li>`;
+      }
+    }
+  </script>
 </body>
 
 </html>
