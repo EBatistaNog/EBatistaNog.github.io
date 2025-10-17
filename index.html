@@ -6,6 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Eduardo Batista Nogueira</title>
   <style>
+    :root{
+      --ink:#222;
+      --muted:#555;
+      --ring:#e6e9ff;
+      --badge:#f5f7ff;
+      --accent:#6a5acd;
+    }
+
     /* Fundo animado */
     body {
       margin: 0;
@@ -15,73 +23,103 @@
       background: linear-gradient(-45deg, #6a5acd, #698cff, #ffb6c1, #ffff99);
       background-size: 400% 400%;
       animation: gradientBG 15s ease infinite;
+      line-height: 1.6;
     }
-
     @keyframes gradientBG {
-      0% {
-        background-position: 0% 50%;
-      }
-
-      50% {
-        background-position: 100% 50%;
-      }
-
-      100% {
-        background-position: 0% 50%;
-      }
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      display: grid;
-      gap: 20px;
-    }
+    .container { max-width: 900px; margin: auto; display: grid; gap: 20px; }
 
     .card {
       background: #fff;
       border-radius: 16px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 10px rgba(0,0,0,.1);
       padding: 24px;
+      border: 1px solid rgba(0,0,0,.05);
+    }
+    h1, h2 { margin-top: 0; }
+
+    .contact-info p, .contact-info a, .tech-list li, .lang-list li { margin: 6px 0; }
+
+    .btns a, .btns button {
+      text-decoration: none; padding: 8px 16px; border-radius: 8px;
+      margin-right: 10px; display: inline-block; border: none; cursor: pointer; font-weight: bold;
+    }
+    .btns a.linkedin, .btns a.github, .btns button.download, .btns button.lang-toggle {
+      background-color: transparent; color: #333; border: 1px solid #333;
+    }
+    .btns a:hover, .btns button:hover { background-color: #333; color: white; }
+
+    /* Seções com título em gradiente */
+    .gradient-title{
+      background: linear-gradient(90deg, var(--accent), #698cff 60%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      font-weight: 800; letter-spacing: .3px;
     }
 
-    h1,
-    h2 {
-      margin-top: 0;
+    /* ---------- TECH SKILLS bonito (chips) ---------- */
+    .skills-wrap{ display: flex; flex-wrap: wrap; gap: 10px; margin: 6px 0 2px; }
+    .skill-chip{
+      padding: 8px 12px; border-radius: 999px; background: var(--badge);
+      border: 1px solid var(--ring); font-size: .95rem; color: var(--ink);
+      box-shadow: 0 1px 0 rgba(0,0,0,.03);
+    }
+    /* Subgrupos opcionais */
+    .skill-group{ margin-top: 10px; }
+    .skill-group b{ display:inline-block; margin-bottom: 6px; color: var(--muted); font-size: .92rem; }
+
+    /* ---------- LANGUAGES bonito (barras) ---------- */
+    .lang-item{ margin: 10px 0 14px; }
+    .lang-head{ display:flex; justify-content:space-between; align-items:center; font-weight:700; }
+    .lang-head small{ color: var(--muted); font-weight:600; }
+    .bar{
+      height: 10px; background:#f2f3f7; border-radius: 999px; overflow: hidden; border:1px solid #e5e7f2;
+      box-shadow: inset 0 1px 2px rgba(0,0,0,.04);
+    }
+    .bar > span{
+      display:block; height:100%;
+      background: linear-gradient(90deg, var(--accent), #698cff);
+      width: 0%;
+      transition: width .6s ease;
     }
 
-    .contact-info p,
-    .contact-info a,
-    .tech-list li,
-    .lang-list li {
-      margin: 6px 0;
+    /* ---------- PRINCÍPIOS estilizados ---------- */
+    .card--principles{
+      padding: 28px; border-radius:16px; box-shadow:0 8px 28px rgba(106,90,205,.08);
+      border:1px solid var(--ring); backdrop-filter: saturate(1.05);
     }
-
-    .btns a,
-    .btns button {
-      text-decoration: none;
-      padding: 8px 16px;
-      border-radius: 8px;
-      margin-right: 10px;
-      display: inline-block;
-      border: none;
-      cursor: pointer;
-      font-weight: bold;
+    #principles-title{ margin-bottom: 14px; font-size: 1.35rem; }
+    #principles-list{
+      margin:0; padding:0; list-style:none; counter-reset: principle; column-gap:28px;
     }
-
-    .btns a.linkedin,
-    .btns a.github,
-    .btns button.download,
-    .btns button.lang-toggle {
-      background-color: transparent;
-      color: #333;
-      border: 1px solid #333;
+    #principles-list li{
+      position:relative; counter-increment: principle;
+      padding:14px 14px 14px 56px; margin:6px 0 12px;
+      background: linear-gradient(0deg, rgba(0,0,0,.02), rgba(0,0,0,.02));
+      border:1px solid rgba(0,0,0,.05); border-radius:12px; box-shadow:0 1px 0 rgba(0,0,0,.03);
+      break-inside: avoid;
     }
+    #principles-list li::before{
+      content: counter(principle);
+      position:absolute; left:14px; top:12px; width:28px; height:28px;
+      display:grid; place-items:center; font:700 13px/1.1 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+      color:var(--accent); background:var(--badge); border:1px solid var(--ring); border-radius:10px;
+    }
+    #principles-list li strong{ color:var(--ink); font-weight:800; }
+    #principles-list li span{ color:var(--muted); }
 
-    .btns a:hover,
-    .btns button:hover {
-      background-color: #333;
-      color: white;
+    /* duas colunas p/ desktop */
+    @media (min-width: 900px){ #principles-list{ columns:2; } }
+
+    /* impressão clean */
+    @media print{
+      body{ background:#fff !important; }
+      .btns{ display:none; }
+      .card{ box-shadow:none; border:1px solid #ddd; }
+      #principles-list li{ box-shadow:none; }
     }
   </style>
 </head>
@@ -103,7 +141,7 @@
     </div>
 
     <div class="card">
-      <h2 id="summary-title">Professional Summary</h2>
+      <h2 id="summary-title" class="gradient-title">Professional Summary</h2>
       <p id="summary-text">
         Experienced QA Engineer with over 8 years in the technology field, combining deep knowledge across
         telecommunications, software development, test automation, continuous integration, high-quality
@@ -112,7 +150,7 @@
     </div>
 
     <div class="card">
-      <h2 id="experience-title">Professional Experience</h2>
+      <h2 id="experience-title" class="gradient-title">Professional Experience</h2>
       <ul id="experience-list">
         <li><strong>QA Engineer</strong> – WatchGuard Technologies (Feb 2021 – Sep 2024)</li>
         <li><strong>Support Analyst</strong> – Infolago Networks Company (Aug 2020 – Feb 2021)</li>
@@ -121,32 +159,98 @@
     </div>
 
     <div class="card">
-      <h2 id="education-title">Education</h2>
+      <h2 id="education-title" class="gradient-title">Education</h2>
       <p id="education-text">Bachelor’s Degree in Telecommunications Engineering – Inatel (2012 – 2018)</p>
     </div>
 
+    <!-- TECH SKILLS (chips) -->
     <div class="card">
-      <h2 id="skills-title">Technical Skills</h2>
-      <ul class="tech-list" id="skills-list">
-        <li>TypeScript, JavaScript, Python, Java</li>
-        <li>Cypress, Playwright, Selenium, Appium</li>
-        <li>Postman, REST Assured</li>
-        <li>JMeter, K6</li>
-        <li>Jenkins</li>
-        <li>CloudWatch, Graylog, New Relic</li>
-        <li>AWS</li>
-        <li>Scrum, JIRA, Confluence</li>
-        <li>SQL, MongoDB</li>
-        <li><a href="https://github.com/EBatistaNog" target="_blank">Portfolio GitHub</a></li>
-      </ul>
+      <h2 id="skills-title" class="gradient-title">Technical Skills</h2>
+
+      <div class="skill-group">
+        <b id="skills-lang-label">Languages</b>
+        <div class="skills-wrap" id="skills-lang">
+          <span class="skill-chip">TypeScript</span>
+          <span class="skill-chip">JavaScript</span>
+          <span class="skill-chip">Python</span>
+          <span class="skill-chip">Java</span>
+          <span class="skill-chip">SQL</span>
+          <span class="skill-chip">MongoDB</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <b id="skills-testtools-label">Test & Automation</b>
+        <div class="skills-wrap" id="skills-testtools">
+          <span class="skill-chip">Cypress</span>
+          <span class="skill-chip">Playwright</span>
+          <span class="skill-chip">Selenium</span>
+          <span class="skill-chip">Appium</span>
+          <span class="skill-chip">Postman</span>
+          <span class="skill-chip">REST Assured</span>
+          <span class="skill-chip">JMeter</span>
+          <span class="skill-chip">k6</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <b id="skills-devops-label">DevOps & Observability</b>
+        <div class="skills-wrap" id="skills-devops">
+          <span class="skill-chip">Jenkins</span>
+          <span class="skill-chip">AWS</span>
+          <span class="skill-chip">CloudWatch</span>
+          <span class="skill-chip">Graylog</span>
+          <span class="skill-chip">New Relic</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <b id="skills-process-label">Process & Collaboration</b>
+        <div class="skills-wrap" id="skills-process">
+          <span class="skill-chip">Scrum</span>
+          <span class="skill-chip">Jira</span>
+          <span class="skill-chip">Confluence</span>
+          <a class="skill-chip" href="https://github.com/EBatistaNog" target="_blank">Portfolio GitHub</a>
+        </div>
+      </div>
     </div>
 
+    <!-- PRINCÍPIOS -->
+    <div class="card card--principles">
+      <h2 id="principles-title" class="gradient-title">Guiding Principles</h2>
+      <ol id="principles-list">
+        <li><strong>Respect</strong> — <span>The foundation of everything. No result, position, or reason justifies disrespecting anyone.</span></li>
+        <li><strong>Clear & Assertive Communication</strong> — <span>Direct messages, no ambiguity. Encourage questioning unsafe decisions.</span></li>
+        <li><strong>Leadership & Collaboration</strong> — <span>Leaders listen. Teammates alert. Strength is in the exchange.</span></li>
+        <li><strong>Situational Awareness</strong> — <span>Know where we are, what’s happening, and what might happen.</span></li>
+        <li><strong>Decision-Making</strong> — <span>Use data, common sense, and risk assessment. Intuition helps; method sustains.</span></li>
+        <li><strong>Workload Management</strong> — <span>Prioritize essentials, share responsibility, recognize limits.</span></li>
+        <li><strong>Avoid Authority & Habit Traps</strong> — <span>Don’t follow blindly. Question what feels wrong, even from experts.</span></li>
+        <li><strong>Review & Continuous Learning</strong> — <span>Review, check, confirm. People communicate differently.</span></li>
+        <li><strong>Cross-Checking (Redundancy)</strong> — <span>Double-checking is care, not mistrust.</span></li>
+        <li><strong>Inexperience Factor</strong> — <span>Consider history and emotions. Empathy is key.</span></li>
+        <li><strong>Honesty Builds Trust</strong> — <span>Truth over time builds trust.</span></li>
+        <li><strong>Learn from What Happens</strong> — <span>Focus on solutions; share and turn into collective learning.</span></li>
+        <li><strong>Delta T (Time Variation)</strong> — <span>Contexts change; maturity adapts without losing values.</span></li>
+        <li><strong>Don’t Scare</strong> — <span>Stay calm and do your best.</span></li>
+        <li><strong>Awareness & Humility</strong> — <span>See the whole; no one grows alone.</span></li>
+        <li><strong>Always Learning</strong> — <span>Every day is a chance to improve.</span></li>
+      </ol>
+    </div>
+
+    <!-- LANGUAGES -->
     <div class="card">
-      <h2 id="languages-title">Languages</h2>
-      <ul class="lang-list" id="languages-list">
-        <li>Portuguese – Native</li>
-        <li>English – Intermediate</li>
-      </ul>
+      <h2 id="languages-title" class="gradient-title">Languages</h2>
+
+      <div class="lang-item">
+        <div class="lang-head"><span id="lang-pt-label">Portuguese</span><small id="lang-pt-level">Native</small></div>
+        <div class="bar" aria-label="Portuguese proficiency"><span id="bar-pt" style="width:100%"></span></div>
+      </div>
+
+      <div class="lang-item">
+        <div class="lang-head"><span id="lang-en-label">English</span><small id="lang-en-level">Intermediate</small></div>
+        <div class="bar" aria-label="English proficiency"><span id="bar-en" style="width:65%"></span></div>
+      </div>
     </div>
   </div>
 
@@ -155,43 +259,106 @@
 
     function toggleLang() {
       isEnglish = !isEnglish;
+
       if (!isEnglish) {
-        // Versão em Português
+        // ---- Português ----
         document.getElementById("summary-title").innerText = "Resumo Profissional";
         document.getElementById("summary-text").innerText =
           "Engenheiro de QA com mais de 8 anos de experiência em tecnologia, unindo conhecimentos em telecomunicações, desenvolvimento de software, automação de testes, integração contínua, entrega de qualidade e soluções em nuvem.";
+
         document.getElementById("experience-title").innerText = "Experiência Profissional";
         document.getElementById("experience-list").innerHTML = `
           <li><strong>Engenheiro de QA</strong> – WatchGuard Technologies (Fev 2021 – Set 2024)</li>
           <li><strong>Analista de Suporte</strong> – Infolago Networks Company (Ago 2020 – Fev 2021)</li>
           <li><strong>Estagiário em Engenharia de RF</strong> – Inatel (Mai 2017 – Dez 2017)</li>`;
+
         document.getElementById("education-title").innerText = "Formação Acadêmica";
-        document.getElementById("education-text").innerText = "Bacharelado em Engenharia de Telecomunicações – Inatel (2012 – 2018)";
+        document.getElementById("education-text").innerText =
+          "Bacharelado em Engenharia de Telecomunicações – Inatel (2012 – 2018)";
+
         document.getElementById("skills-title").innerText = "Competências Técnicas";
+        document.getElementById("skills-lang-label").innerText = "Linguagens";
+        document.getElementById("skills-testtools-label").innerText = "Teste & Automação";
+        document.getElementById("skills-devops-label").innerText = "DevOps & Observabilidade";
+        document.getElementById("skills-process-label").innerText = "Processos & Colaboração";
+
+        document.getElementById("principles-title").innerText = "Princípios que me guiam";
+        document.getElementById("principles-list").innerHTML = `
+          <li><strong>Respeito</strong> — <span>O pensamento em Comunidade é a base de tudo. Nenhum resultado, cargo ou razão justifica desrespeitar alguém.</span></li>
+          <li><strong>Comunicação Clara e Assertiva</strong> — <span>Mensagens diretas, sem ambiguidades. Incentivo a questionar decisões inseguras.</span></li>
+          <li><strong>Liderança e Colaboração</strong> — <span>Quem lidera, ouve. Quem colabora, alerta. A força está na troca.</span></li>
+          <li><strong>Consciência Situacional</strong> — <span>Manter noção contínua de onde estamos, do que está acontecendo e do que pode acontecer.</span></li>
+          <li><strong>Tomada de Decisão</strong> — <span>Basear decisões em dados, bom senso e avaliação de riscos. Intuição ajuda; método sustenta.</span></li>
+          <li><strong>Gerenciamento de Carga de Trabalho</strong> — <span>Priorizar o essencial, dividir responsabilidades e reconhecer limites.</span></li>
+          <li><strong>Evitar Armadilhas de Autoridade e do Hábito</strong> — <span>Não seguir cegamente. Questionar o que parece errado, mesmo de experientes.</span></li>
+          <li><strong>Revisão & Aprendizagem Contínua</strong> — <span>Revisar, checar, confirmar e gotejar. Cada pessoa se comunica de um jeito.</span></li>
+          <li><strong>Verificação Cruzada (Redundância)</strong> — <span>Dupla checagem não é desconfiança, é cuidado.</span></li>
+          <li><strong>Fator Inexperiente</strong> — <span>Levar em conta o histórico e o emocional do outro. Empatia é a chave.</span></li>
+          <li><strong>Honestidade é a Base</strong> — <span>Ser verdadeiro, mesmo quando é difícil. A confiança nasce do tempo e das atitudes.</span></li>
+          <li><strong>Aprender com o Que Acontece</strong> — <span>Quando algo sai do esperado, foque na solução; compartilhe e transforme em aprendizado coletivo.</span></li>
+          <li><strong>Delta T (Variação do Tempo)</strong> — <span>As pessoas e os contextos mudam. Maturidade é adaptar-se sem perder valores.</span></li>
+          <li><strong>Não Assustar</strong> — <span>Mantenha a calma e faça o seu melhor.</span></li>
+          <li><strong>Conscientização e Humildade</strong> — <span>Enxergar o todo; ninguém cresce sozinho.</span></li>
+          <li><strong>Sempre Aprendendo</strong> — <span>Cada dia é uma oportunidade de melhorar.</span></li>`;
+
         document.getElementById("languages-title").innerText = "Idiomas";
-        document.getElementById("languages-list").innerHTML = `
-          <li>Português – Nativo</li>
-          <li>Inglês – Intermediário</li>`;
+        document.getElementById("lang-pt-label").innerText = "Português";
+        document.getElementById("lang-pt-level").innerText = "Nativo";
+        document.getElementById("lang-en-label").innerText = "Inglês";
+        document.getElementById("lang-en-level").innerText = "Intermediário";
+
       } else {
-        // Versão em Inglês
+        // ---- English ----
         document.getElementById("summary-title").innerText = "Professional Summary";
         document.getElementById("summary-text").innerText =
           "Experienced QA Engineer with over 8 years in the technology field, combining deep knowledge across telecommunications, software development, test automation, continuous integration, high-quality delivery, and cloud solutions.";
+
         document.getElementById("experience-title").innerText = "Professional Experience";
         document.getElementById("experience-list").innerHTML = `
           <li><strong>QA Engineer</strong> – WatchGuard Technologies (Feb 2021 – Sep 2024)</li>
           <li><strong>Support Analyst</strong> – Infolago Networks Company (Aug 2020 – Feb 2021)</li>
           <li><strong>RF Engineering Intern</strong> – Inatel (May 2017 – Dec 2017)</li>`;
+
         document.getElementById("education-title").innerText = "Education";
-        document.getElementById("education-text").innerText = "Bachelor’s Degree in Telecommunications Engineering – Inatel (2012 – 2018)";
+        document.getElementById("education-text").innerText =
+          "Bachelor’s Degree in Telecommunications Engineering – Inatel (2012 – 2018)";
+
         document.getElementById("skills-title").innerText = "Technical Skills";
+        document.getElementById("skills-lang-label").innerText = "Languages";
+        document.getElementById("skills-testtools-label").innerText = "Test & Automation";
+        document.getElementById("skills-devops-label").innerText = "DevOps & Observability";
+        document.getElementById("skills-process-label").innerText = "Process & Collaboration";
+
+        document.getElementById("principles-title").innerText = "Guiding Principles";
+        document.getElementById("principles-list").innerHTML = `
+          <li><strong>Respect</strong> — <span>Community mindset is the foundation of everything. No result, position, or reason justifies disrespecting anyone.</span></li>
+          <li><strong>Clear & Assertive Communication</strong> — <span>Direct messages, no ambiguity. Encourage questioning unsafe decisions.</span></li>
+          <li><strong>Leadership & Collaboration</strong> — <span>Leaders listen. Teammates alert. Strength is in the exchange.</span></li>
+          <li><strong>Situational Awareness</strong> — <span>Know where we are, what’s happening, and what might happen.</span></li>
+          <li><strong>Decision-Making</strong> — <span>Use data, common sense, and risk assessment. Intuition helps; method sustains.</span></li>
+          <li><strong>Workload Management</strong> — <span>Prioritize essentials, share responsibility, recognize limits.</span></li>
+          <li><strong>Avoid Authority & Habit Traps</strong> — <span>Don’t follow blindly. Question what feels wrong, even from experts.</span></li>
+          <li><strong>Review & Continuous Learning</strong> — <span>Review, check, confirm and drip the information. People communicate differently.</span></li>
+          <li><strong>Cross-Checking (Redundancy)</strong> — <span>Double-checking is care, not mistrust.</span></li>
+          <li><strong>Inexperience Factor</strong> — <span>Consider history and emotions. Empathy is key.</span></li>
+          <li><strong>Honesty Builds Trust</strong> — <span>Truth over time builds trust.</span></li>
+          <li><strong>Learn from What Happens</strong> — <span>Focus on solutions; share and turn into collective learning.</span></li>
+          <li><strong>Delta T (Time Variation)</strong> — <span>Contexts change; maturity adapts without losing values.</span></li>
+          <li><strong>Don’t Scare</strong> — <span>Stay calm and do your best.</span></li>
+          <li><strong>Awareness & Humility</strong> — <span>See the whole; no one grows alone.</span></li>
+          <li><strong>Always Learning</strong> — <span>Every day is a chance to improve.</span></li>`;
+
         document.getElementById("languages-title").innerText = "Languages";
-        document.getElementById("languages-list").innerHTML = `
-          <li>Portuguese – Native</li>
-          <li>English – Intermediate</li>`;
+        document.getElementById("lang-pt-label").innerText = "Portuguese";
+        document.getElementById("lang-pt-level").innerText = "Native";
+        document.getElementById("lang-en-label").innerText = "English";
+        document.getElementById("lang-en-level").innerText = "Intermediate";
       }
+
+      // (mantém as porcentagens das barras)
+      document.getElementById("bar-pt").style.width = "100%";
+      document.getElementById("bar-en").style.width = "65%";
     }
   </script>
 </body>
-
 </html>
