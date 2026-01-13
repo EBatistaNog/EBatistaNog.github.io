@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Eduardo Batista Nogueira</title>
   <style>
-    :root{
-      --ink:#222;
-      --muted:#555;
-      --ring:#e6e9ff;
-      --badge:#f5f7ff;
-      --accent:#6a5acd;
+    :root {
+      --ink: #222;
+      --muted: #555;
+      --ring: #e6e9ff;
+      --badge: #f5f7ff;
+      --accent: #6a5acd;
     }
 
     /* Fundo animado */
@@ -25,101 +25,256 @@
       animation: gradientBG 15s ease infinite;
       line-height: 1.6;
     }
+
     @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
     }
 
-    .container { max-width: 900px; margin: auto; display: grid; gap: 20px; }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      display: grid;
+      gap: 20px;
+    }
 
     .card {
       background: #fff;
       border-radius: 16px;
-      box-shadow: 0 2px 10px rgba(0,0,0,.1);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, .1);
       padding: 24px;
-      border: 1px solid rgba(0,0,0,.05);
+      border: 1px solid rgba(0, 0, 0, .05);
     }
-    h1, h2 { margin-top: 0; }
 
-    .contact-info p, .contact-info a, .tech-list li, .lang-list li { margin: 6px 0; }
+    h1,
+    h2 {
+      margin-top: 0;
+    }
 
-    .btns a, .btns button {
-      text-decoration: none; padding: 8px 16px; border-radius: 8px;
-      margin-right: 10px; display: inline-block; border: none; cursor: pointer; font-weight: bold;
+    .contact-info p,
+    .contact-info a,
+    .tech-list li,
+    .lang-list li {
+      margin: 6px 0;
     }
-    .btns a.linkedin, .btns a.github, .btns button.download, .btns button.lang-toggle {
-      background-color: transparent; color: #333; border: 1px solid #333;
+
+    .btns a,
+    .btns button {
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      margin-right: 10px;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
     }
-    .btns a:hover, .btns button:hover { background-color: #333; color: white; }
+
+    .btns a.linkedin,
+    .btns a.github,
+    .btns button.download,
+    .btns button.lang-toggle {
+      background-color: transparent;
+      color: #333;
+      border: 1px solid #333;
+    }
+
+    .btns a:hover,
+    .btns button:hover {
+      background-color: #333;
+      color: white;
+    }
 
     /* Seções com título em gradiente */
-    .gradient-title{
+    .gradient-title {
       background: linear-gradient(90deg, var(--accent), #698cff 60%);
-      -webkit-background-clip: text; background-clip: text; color: transparent;
-      font-weight: 800; letter-spacing: .3px;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-weight: 800;
+      letter-spacing: .3px;
     }
 
-    /* ---------- TECH SKILLS bonito (chips) ---------- */
-    .skills-wrap{ display: flex; flex-wrap: wrap; gap: 10px; margin: 6px 0 2px; }
-    .skill-chip{
-      padding: 8px 12px; border-radius: 999px; background: var(--badge);
-      border: 1px solid var(--ring); font-size: .95rem; color: var(--ink);
-      box-shadow: 0 1px 0 rgba(0,0,0,.03);
+
+    .skills-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 6px 0 2px;
     }
+
+    .skill-chip {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--badge);
+      border: 1px solid var(--ring);
+      font-size: .95rem;
+      color: var(--ink);
+      box-shadow: 0 1px 0 rgba(0, 0, 0, .03);
+    }
+
     /* Subgrupos opcionais */
-    .skill-group{ margin-top: 10px; }
-    .skill-group b{ display:inline-block; margin-bottom: 6px; color: var(--muted); font-size: .92rem; }
+    .skill-group {
+      margin-top: 10px;
+    }
+
+    .skill-group b {
+      display: inline-block;
+      margin-bottom: 6px;
+      color: var(--muted);
+      font-size: .92rem;
+    }
 
     /* ---------- LANGUAGES bonito (barras) ---------- */
-    .lang-item{ margin: 10px 0 14px; }
-    .lang-head{ display:flex; justify-content:space-between; align-items:center; font-weight:700; }
-    .lang-head small{ color: var(--muted); font-weight:600; }
-    .bar{
-      height: 10px; background:#f2f3f7; border-radius: 999px; overflow: hidden; border:1px solid #e5e7f2;
-      box-shadow: inset 0 1px 2px rgba(0,0,0,.04);
+    .lang-item {
+      margin: 10px 0 14px;
     }
-    .bar > span{
-      display:block; height:100%;
+
+    .lang-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 700;
+    }
+
+    .lang-head small {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .bar {
+      height: 10px;
+      background: #f2f3f7;
+      border-radius: 999px;
+      overflow: hidden;
+      border: 1px solid #e5e7f2;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, .04);
+    }
+
+    .bar>span {
+      display: block;
+      height: 100%;
       background: linear-gradient(90deg, var(--accent), #698cff);
       width: 0%;
       transition: width .6s ease;
     }
 
     /* ---------- PRINCÍPIOS estilizados ---------- */
-    .card--principles{
-      padding: 28px; border-radius:16px; box-shadow:0 8px 28px rgba(106,90,205,.08);
-      border:1px solid var(--ring); backdrop-filter: saturate(1.05);
+    .card--principles {
+      padding: 28px;
+      border-radius: 16px;
+      box-shadow: 0 8px 28px rgba(106, 90, 205, .08);
+      border: 1px solid var(--ring);
+      backdrop-filter: saturate(1.05);
     }
-    #principles-title{ margin-bottom: 14px; font-size: 1.35rem; }
-    #principles-list{
-      margin:0; padding:0; list-style:none; counter-reset: principle; column-gap:28px;
-    }
-    #principles-list li{
-      position:relative; counter-increment: principle;
-      padding:14px 14px 14px 56px; margin:6px 0 12px;
-      background: linear-gradient(0deg, rgba(0,0,0,.02), rgba(0,0,0,.02));
-      border:1px solid rgba(0,0,0,.05); border-radius:12px; box-shadow:0 1px 0 rgba(0,0,0,.03);
-      break-inside: avoid;
-    }
-    #principles-list li::before{
-      content: counter(principle);
-      position:absolute; left:14px; top:12px; width:28px; height:28px;
-      display:grid; place-items:center; font:700 13px/1.1 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-      color:var(--accent); background:var(--badge); border:1px solid var(--ring); border-radius:10px;
-    }
-    #principles-list li strong{ color:var(--ink); font-weight:800; }
-    #principles-list li span{ color:var(--muted); }
 
-    /* duas colunas p/ desktop */
-    @media (min-width: 900px){ #principles-list{ columns:2; } }
+    #principles-title {
+      margin-bottom: 14px;
+      font-size: 1.35rem;
+    }
 
-    /* impressão clean */
-    @media print{
-      body{ background:#fff !important; }
-      .btns{ display:none; }
-      .card{ box-shadow:none; border:1px solid #ddd; }
-      #principles-list li{ box-shadow:none; }
+  /* ===== GUIDING PRINCIPLES / PRINCÍPIOS ===== */
+
+#principles-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 24px;
+
+  counter-reset: principle;
+}
+
+/* Card */
+#principles-list li {
+  position: relative;
+  counter-increment: principle;
+
+  padding: 10px 16px 10px 52px;
+  min-height: 48px;
+
+  display: flex;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.008); /* quase branco */
+  border: 1px solid rgba(0, 0, 0, 0.035);
+  border-radius: 12px;
+
+  box-shadow: none;
+}
+
+/* Número */
+#principles-list li::before {
+  content: counter(principle);
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 24px;
+  height: 24px;
+
+  display: grid;
+  place-items: center;
+
+  font: 700 12px/1 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--accent);
+
+  background: rgba(106, 90, 205, 0.06);
+  border: 1px solid rgba(106, 90, 205, 0.18);
+  border-radius: 9px;
+}
+
+/* Texto */
+#principles-list li strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* Hover sutil (opcional, fica lindo) */
+#principles-list li:hover {
+  background: rgba(0, 0, 0, 0.015);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  #principles-list {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+
+
+
+    @media print {
+      body {
+        background: #fff !important;
+      }
+
+      .btns {
+        display: none;
+      }
+
+      .card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+      }
+
+      #principles-list li {
+        box-shadow: none;
+      }
     }
   </style>
 </head>
@@ -132,7 +287,8 @@
         <p>📞 +55 (35) 99718-1888</p>
         <p>📧 pro.eduardobatistanogueira@gmail.com</p>
         <div class="btns">
-          <a class="linkedin" href="https://linkedin.com/in/eduardo-batista-nogueira-89046716a" target="_blank">LinkedIn</a>
+          <a class="linkedin" href="https://linkedin.com/in/eduardo-batista-nogueira-89046716a"
+            target="_blank">LinkedIn</a>
           <a class="github" href="https://github.com/EBatistaNog" target="_blank">GitHub</a>
           <button class="download" onclick="window.print()">Download PDF</button>
           <button class="lang-toggle" onclick="toggleLang()">PT/EN</button>
@@ -161,6 +317,14 @@
     <div class="card">
       <h2 id="education-title" class="gradient-title">Education</h2>
       <p id="education-text">Bachelor’s Degree in Telecommunications Engineering – Inatel (2012 – 2018)</p>
+    </div>
+
+    <!-- ✅ CERTIFICATIONS -->
+    <div class="card">
+      <h2 id="certification-title" class="gradient-title">Certifications</h2>
+      <ul id="certification-list">
+        <li>ISTQB Certified Tester Foundation Level (CTFL)</li>
+      </ul>
     </div>
 
     <!-- TECH SKILLS (chips) -->
@@ -219,24 +383,13 @@
     <div class="card card--principles">
       <h2 id="principles-title" class="gradient-title">Guiding Principles</h2>
       <ol id="principles-list">
-        <li><strong>Respect</strong> — <span>The foundation of everything. No result, position, or reason justifies disrespecting anyone.</span></li>
-        <li><strong>Clear & Assertive Communication</strong> — <span>Direct messages, no ambiguity. Encourage questioning unsafe decisions.</span></li>
-        <li><strong>Leadership & Collaboration</strong> — <span>Leaders listen. Teammates alert. Strength is in the exchange.</span></li>
-        <li><strong>Situational Awareness</strong> — <span>Know where we are, what’s happening, and what might happen.</span></li>
-        <li><strong>Decision-Making</strong> — <span>Use data, common sense, and risk assessment. Intuition helps; method sustains.</span></li>
-        <li><strong>Workload Management</strong> — <span>Prioritize essentials, share responsibility, recognize limits.</span></li>
-        <li><strong>Avoid Authority & Habit Traps</strong> — <span>Don’t follow blindly. Question what feels wrong, even from experts.</span></li>
-        <li><strong>Review & Continuous Learning</strong> — <span>Review, check, confirm. People communicate differently.</span></li>
-        <li><strong>Cross-Checking (Redundancy)</strong> — <span>Double-checking is care, not mistrust.</span></li>
-        <li><strong>Inexperience Factor</strong> — <span>Consider history and emotions. Empathy is key.</span></li>
-        <li><strong>Honesty Builds Trust</strong> — <span>Truth over time builds trust.</span></li>
-        <li><strong>Learn from What Happens</strong> — <span>Focus on solutions; share and turn into collective learning.</span></li>
-        <li><strong>Delta T (Time Variation)</strong> — <span>Contexts change; maturity adapts without losing values.</span></li>
-        <li><strong>Don’t Scare</strong> — <span>Stay calm and do your best.</span></li>
-        <li><strong>Awareness & Humility</strong> — <span>See the whole; no one grows alone.</span></li>
-        <li><strong>Copy Ideas, Not the Ego</strong> — <span>Learn from what works and avoid falling into the traps of pride.</span></li>
-        <li><strong>Strength in Community</strong> — <span>Be careful when there’s only one opinion; true power lies in unity and exchange.</span></li>
-        <li><strong>Always Learning</strong> — <span>Every day is a chance to improve.</span></li>
+        <li>Clear & Assertive Communication</li>
+        <li>Decision-Making</li>
+        <li>Review</li>
+        <li>Cross-Checking (Redundancy)</li>
+        <li>Honesty Builds Trust</li>
+        <li>Awareness</li>
+        <li>Always Learning</li>`
       </ol>
     </div>
 
@@ -250,7 +403,8 @@
       </div>
 
       <div class="lang-item">
-        <div class="lang-head"><span id="lang-en-label">English</span><small id="lang-en-level">Intermediate</small></div>
+        <div class="lang-head"><span id="lang-en-label">English</span><small id="lang-en-level">Intermediate</small>
+        </div>
         <div class="bar" aria-label="English proficiency"><span id="bar-en" style="width:65%"></span></div>
       </div>
     </div>
@@ -278,6 +432,11 @@
         document.getElementById("education-text").innerText =
           "Bacharelado em Engenharia de Telecomunicações – Inatel (2012 – 2018)";
 
+        // ✅ CERTIFICAÇÕES (PT)
+        document.getElementById("certification-title").innerText = "Certificações";
+        document.getElementById("certification-list").innerHTML = `
+          <li>ISTQB Certified Tester Foundation Level (CTFL)</li>`;
+
         document.getElementById("skills-title").innerText = "Competências Técnicas";
         document.getElementById("skills-lang-label").innerText = "Linguagens";
         document.getElementById("skills-testtools-label").innerText = "Teste & Automação";
@@ -286,24 +445,14 @@
 
         document.getElementById("principles-title").innerText = "Princípios que me guiam";
         document.getElementById("principles-list").innerHTML = `
-          <li><strong>Respeito</strong> — <span>O pensamento em Comunidade é a base de tudo. Nenhum resultado, cargo ou razão justifica desrespeitar alguém.</span></li>
-          <li><strong>Comunicação Clara e Assertiva</strong> — <span>Mensagens diretas, sem ambiguidades. Incentivo a questionar decisões inseguras.</span></li>
-          <li><strong>Liderança e Colaboração</strong> — <span>Quem lidera, ouve. Quem colabora, alerta. A força está na troca.</span></li>
-          <li><strong>Consciência Situacional</strong> — <span>Manter noção contínua de onde estamos, do que está acontecendo e do que pode acontecer.</span></li>
-          <li><strong>Tomada de Decisão</strong> — <span>Basear decisões em dados, bom senso e avaliação de riscos. Intuição ajuda; método sustenta.</span></li>
-          <li><strong>Gerenciamento de Carga de Trabalho</strong> — <span>Priorizar o essencial, dividir responsabilidades e reconhecer limites.</span></li>
-          <li><strong>Evitar Armadilhas de Autoridade e do Hábito</strong> — <span>Não seguir cegamente. Questionar o que parece errado, mesmo de experientes.</span></li>
-          <li><strong>Revisão & Aprendizagem Contínua</strong> — <span>Revisar, checar, confirmar e gotejar. Cada pessoa se comunica de um jeito.</span></li>
-          <li><strong>Verificação Cruzada (Redundância)</strong> — <span>Dupla checagem não é desconfiança, é cuidado.</span></li>
-          <li><strong>Fator Inexperiente</strong> — <span>Levar em conta o histórico e o emocional do outro. Empatia é a chave.</span></li>
-          <li><strong>Honestidade é a Base</strong> — <span>Ser verdadeiro, mesmo quando é difícil. A confiança nasce do tempo e das atitudes.</span></li>
-          <li><strong>Aprender com o Que Acontece</strong> — <span>Quando algo sai do esperado, foque na solução; compartilhe e transforme em aprendizado coletivo.</span></li>
-          <li><strong>Delta T (Variação do Tempo)</strong> — <span>As pessoas e os contextos mudam. Maturidade é adaptar-se sem perder valores.</span></li>
-          <li><strong>Não Assustar</strong> — <span>Mantenha a calma e faça o seu melhor.</span></li>
-          <li><strong>Conscientização e Humildade</strong> — <span>Enxergar o todo; ninguém cresce sozinho.</span></li>
-          <li><strong>Copie Ideias, Não o Ego</strong> — <span>Aprenda com o que é bom e evite cair nas armadilhas do orgulho.</span></li>
-          <li><strong>Força na Comunidade</strong> — <span>Cuidado quando há apenas uma opinião; o verdadeiro poder está na união e na troca.</span></li>
-          <li><strong>Sempre Aprendendo</strong> — <span>Cada dia é uma oportunidade de melhorar.</span></li>`;
+          <li>Comunicação Clara e Assertiva</li>
+          <li>Tomada de Decisão</li>
+          <li>Revisão</li>
+          <li>Verificação Cruzada (Redundância)</li>
+          <li>Honestidade Gera Confiança</li>
+          <li>Consciência</li>
+          <li>Sempre Aprendendo</li>
+`;
 
         document.getElementById("languages-title").innerText = "Idiomas";
         document.getElementById("lang-pt-label").innerText = "Português";
@@ -327,6 +476,11 @@
         document.getElementById("education-text").innerText =
           "Bachelor’s Degree in Telecommunications Engineering – Inatel (2012 – 2018)";
 
+        // ✅ CERTIFICATIONS (EN)
+        document.getElementById("certification-title").innerText = "Certifications";
+        document.getElementById("certification-list").innerHTML = `
+          <li>ISTQB Certified Tester Foundation Level (CTFL)</li>`;
+
         document.getElementById("skills-title").innerText = "Technical Skills";
         document.getElementById("skills-lang-label").innerText = "Languages";
         document.getElementById("skills-testtools-label").innerText = "Test & Automation";
@@ -335,25 +489,14 @@
 
         document.getElementById("principles-title").innerText = "Guiding Principles";
         document.getElementById("principles-list").innerHTML = `
-          <li><strong>Respect</strong> — <span>Community mindset is the foundation of everything. No result, position, or reason justifies disrespecting anyone.</span></li>
-          <li><strong>Clear & Assertive Communication</strong> — <span>Direct messages, no ambiguity. Encourage questioning unsafe decisions.</span></li>
-          <li><strong>Leadership & Collaboration</strong> — <span>Leaders listen. Teammates alert. Strength is in the exchange.</span></li>
-          <li><strong>Situational Awareness</strong> — <span>Know where we are, what’s happening, and what might happen.</span></li>
-          <li><strong>Decision-Making</strong> — <span>Use data, common sense, and risk assessment. Intuition helps; method sustains.</span></li>
-          <li><strong>Workload Management</strong> — <span>Prioritize essentials, share responsibility, recognize limits.</span></li>
-          <li><strong>Avoid Authority & Habit Traps</strong> — <span>Don’t follow blindly. Question what feels wrong, even from experts.</span></li>
-          <li><strong>Review & Continuous Learning</strong> — <span>Review, check, confirm and drip the information. People communicate differently.</span></li>
-          <li><strong>Cross-Checking (Redundancy)</strong> — <span>Double-checking is care, not mistrust.</span></li>
-          <li><strong>Inexperience Factor</strong> — <span>Consider history and emotions. Empathy is key.</span></li>
-          <li><strong>Honesty Builds Trust</strong> — <span>Truth over time builds trust.</span></li>
-          <li><strong>Learn from What Happens</strong> — <span>Focus on solutions; share and turn into collective learning.</span></li>
-          <li><strong>Delta T (Time Variation)</strong> — <span>Contexts change; maturity adapts without losing values.</span></li>
-          <li><strong>Don’t Scare</strong> — <span>Stay calm and do your best.</span></li>
-          <li><strong>Awareness & Humility</strong> — <span>See the whole; no one grows alone.</span></li>
-          <li><strong>Copy Ideas, Not the Ego</strong> — <span>Learn from what works and avoid falling into the traps of pride.</span></li>
-          <li><strong>Strength in Community</strong> — <span>Be careful when there’s only one opinion; true power lies in unity and exchange.</span></li>
-          <li><strong>Always Learning</strong> — <span>Every day is a chance to improve.</span></li>`
-          
+          <li>Clear & Assertive Communication</li>
+          <li>Decision-Making</li>
+          <li>Review</li>
+          <li>Cross-Checking (Redundancy)</li>
+          <li>Honesty Builds Trust</li>
+          <li>Awareness</li>
+          <li>Always Learning</li>`;
+
         document.getElementById("languages-title").innerText = "Languages";
         document.getElementById("lang-pt-label").innerText = "Portuguese";
         document.getElementById("lang-pt-level").innerText = "Native";
@@ -367,4 +510,5 @@
     }
   </script>
 </body>
+
 </html>
